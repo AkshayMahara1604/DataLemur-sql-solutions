@@ -1,0 +1,7 @@
+select count(co_w_duplicate_jobs) as co_w_duplicate_jobs 
+from (
+select count(*)  as  co_w_duplicate_jobs
+from job_listings
+group by company_id ,  title , description 
+) as table1
+where co_w_duplicate_jobs > 1 ;
